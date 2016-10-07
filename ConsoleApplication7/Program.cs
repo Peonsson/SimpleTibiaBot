@@ -9,9 +9,8 @@ using System.Threading;
 
 namespace SimpleTibiaBot
 {
-        class Program
-        {
-
+    class Program
+    {
         private static IntPtr Handle;
 
         [Flags]
@@ -91,7 +90,7 @@ namespace SimpleTibiaBot
             UInt32 Base = (UInt32) Tibia.MainModule.BaseAddress.ToInt32();
             int bytesOut;
 
-            //Skills, hp, mana etc.(generally the skills window)
+            //Skills, hp, mana etc. (generally the skills window)
             UInt32 Adr_Exp = 0x1C6840;
             UInt32 Adr_Lvl = 0x1C683C;
             UInt32 Adr_Hp = 0x1C6848;
@@ -114,11 +113,11 @@ namespace SimpleTibiaBot
             UInt32 Adr_FishLvl = 0x1C6810;
             UInt32 Adr_FishPerc = 0x1C67F4;
 
-            //X, Y, Z maps, char etc. 
-            UInt32 Adr_PlayerX = 0x1C68D4;
-            UInt32 Adr_PlayerY = 0x1C68D8;
-            UInt32 Adr_PlayerZ = 0x1C68DC;
-            UInt32 Adr_PlayerR = 0x1C68DC;
+            // X, Y, Z maps, char etc.
+            //UInt32 Adr_PlayerX = 0x1C68D4;
+            //UInt32 Adr_PlayerY = 0x1C68D8;
+            //UInt32 Adr_PlayerZ = 0x1C68DC;
+            //UInt32 Adr_PlayerR = 0x1C68DC;
 
             // Others
             //UInt32 Adr_MouseUse = $71C5E8;
@@ -149,7 +148,6 @@ namespace SimpleTibiaBot
             int counter = 0;
             while (true)
             {
-
                 if (ReadString(Base + Adr_BListBegin + (0x9C * counter), Handle).Equals("Peon"))
                 {
                     myBase = Base + Adr_BListBegin + (0x9C * (uint)counter);
@@ -218,7 +216,7 @@ namespace SimpleTibiaBot
                         Console.WriteLine("Target Z: " + ReadInt32(Base + Adr_BListBegin + Adr_BL_Z_Offset + (0x9C * counter), Handle));
 
                         int direction = ReadInt32(Base + Adr_BListBegin + Adr_BL_Direction_Offset + (0x9C * counter),Handle);
-                        string temp = string.Empty;
+                        string temp;
                         if (direction == 0)
                             temp = "NORTH";
                         else if (direction == 1)
@@ -233,7 +231,6 @@ namespace SimpleTibiaBot
                         break;
                     }
                 }
-
                 Thread.Sleep(250);
                 Console.Clear();
                 Console.SetCursorPosition(0, 0);
