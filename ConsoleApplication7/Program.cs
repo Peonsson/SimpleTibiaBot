@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace ConsoleApplication7
+namespace SimpleTibiaBot
 {
         class Program
         {
