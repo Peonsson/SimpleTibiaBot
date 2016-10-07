@@ -159,42 +159,39 @@ namespace SimpleTibiaBot
             while (true)
             {
                 Console.WriteLine("[Skills window]");
-                Console.WriteLine("Adr_Exp: " + Convert.ToString(ReadInt32(Base + Adr_Exp, Handle)));
-                Console.WriteLine("Adr_Lvl: " + Convert.ToString(ReadInt32(Base + Adr_Lvl, Handle)));
-                Console.WriteLine("Adr_Hp: " + Convert.ToString(ReadInt32(Base + Adr_Hp, Handle)));
-                Console.WriteLine("Adr_Mana: " + Convert.ToString(ReadInt32(Base + Adr_Mana, Handle)));
-                Console.WriteLine("Adr_Cap: " + Convert.ToString(ReadInt32(Base + Adr_Cap, Handle)));
-                Console.WriteLine("Adr_MlvlLvl: " + Convert.ToString(ReadInt32(Base + Adr_MlvlLvl, Handle)));
-                Console.WriteLine("Adr_MlvlPerc: " + Convert.ToString(ReadInt32(Base + Adr_MlvlPerc, Handle)));
-                Console.WriteLine("Adr_FistLvl: " + Convert.ToString(ReadInt32(Base + Adr_FistLvl, Handle)));
-                Console.WriteLine("Adr_FistPerc: " + Convert.ToString(ReadInt32(Base + Adr_FistPerc, Handle)));
-                Console.WriteLine("Adr_ClubLvl: " + Convert.ToString(ReadInt32(Base + Adr_ClubLvl, Handle)));
-                Console.WriteLine("Adr_ClubPerc: " + Convert.ToString(ReadInt32(Base + Adr_ClubPerc, Handle)));
-                Console.WriteLine("Adr_SwordLvl: " + Convert.ToString(ReadInt32(Base + Adr_SwordLvl, Handle)));
-                Console.WriteLine("Adr_SwordPerc: " + Convert.ToString(ReadInt32(Base + Adr_SwordPerc, Handle)));
-                Console.WriteLine("Adr_AxeLvl: " + Convert.ToString(ReadInt32(Base + Adr_AxeLvl, Handle)));
-                Console.WriteLine("Adr_AxePerc: " + Convert.ToString(ReadInt32(Base + Adr_AxePerc, Handle)));
-                Console.WriteLine("Adr_DistLvl: " + Convert.ToString(ReadInt32(Base + Adr_DistLvl, Handle)));
-                Console.WriteLine("Adr_DistPerc: " + Convert.ToString(ReadInt32(Base + Adr_DistPerc, Handle)));
-                Console.WriteLine("Adr_ShieldLvl: " + Convert.ToString(ReadInt32(Base + Adr_ShieldLvl, Handle)));
-                Console.WriteLine("Adr_ShieldPerc: " + Convert.ToString(ReadInt32(Base + Adr_ShieldPerc, Handle)));
-                Console.WriteLine("Adr_FishLvl: " + Convert.ToString(ReadInt32(Base + Adr_FishLvl, Handle)));
-                Console.WriteLine("Adr_FishPerc: " + Convert.ToString(ReadInt32(Base + Adr_FishPerc, Handle)));
-                Console.WriteLine("Adr_FishPerc: " + Convert.ToString(ReadInt32(Base + Adr_FishPerc, Handle)));
-                Console.WriteLine("Adr_FishPerc: " + Convert.ToString(ReadInt32(Base + Adr_FishPerc, Handle)));
-                Console.WriteLine("Adr_FishPerc: " + Convert.ToString(ReadInt32(Base + Adr_FishPerc, Handle)));
+                Console.WriteLine("Exp: " + Convert.ToString(ReadInt32(Base + Adr_Exp, Handle)));
+                Console.WriteLine("Lvl: " + Convert.ToString(ReadInt32(Base + Adr_Lvl, Handle)));
+                Console.WriteLine("Hp: " + Convert.ToString(ReadInt32(Base + Adr_Hp, Handle)));
+                Console.WriteLine("Mana: " + Convert.ToString(ReadInt32(Base + Adr_Mana, Handle)));
+                Console.WriteLine("Cap: " + Convert.ToString(ReadInt32(Base + Adr_Cap, Handle)));
+                Console.WriteLine("Magic: " + Convert.ToString(ReadInt32(Base + Adr_MlvlLvl, Handle)));
+                //Console.WriteLine("Magic%: " + Convert.ToString(ReadInt32(Base + Adr_MlvlPerc, Handle)));
+                Console.WriteLine("Fist: " + Convert.ToString(ReadInt32(Base + Adr_FistLvl, Handle)));
+                //Console.WriteLine("Fist%: " + Convert.ToString(ReadInt32(Base + Adr_FistPerc, Handle)));
+                Console.WriteLine("Club: " + Convert.ToString(ReadInt32(Base + Adr_ClubLvl, Handle)));
+               // Console.WriteLine("Club%: " + Convert.ToString(ReadInt32(Base + Adr_ClubPerc, Handle)));
+                Console.WriteLine("Sword: " + Convert.ToString(ReadInt32(Base + Adr_SwordLvl, Handle)));
+                //Console.WriteLine("Sword%: " + Convert.ToString(ReadInt32(Base + Adr_SwordPerc, Handle)));
+                Console.WriteLine("Axe: " + Convert.ToString(ReadInt32(Base + Adr_AxeLvl, Handle)));
+                //Console.WriteLine("Axe%: " + Convert.ToString(ReadInt32(Base + Adr_AxePerc, Handle)));
+                Console.WriteLine("Dist: " + Convert.ToString(ReadInt32(Base + Adr_DistLvl, Handle)));
+                //Console.WriteLine("Dist%: " + Convert.ToString(ReadInt32(Base + Adr_DistPerc, Handle)));
+                Console.WriteLine("Shield: " + Convert.ToString(ReadInt32(Base + Adr_ShieldLvl, Handle)));
+                //Console.WriteLine("Shield%: " + Convert.ToString(ReadInt32(Base + Adr_ShieldPerc, Handle)));
+                Console.WriteLine("Fishing: " + Convert.ToString(ReadInt32(Base + Adr_FishLvl, Handle)));
+                //Console.WriteLine("Fish%: " + Convert.ToString(ReadInt32(Base + Adr_FishPerc, Handle)));
                 Console.WriteLine("");
 
                 Console.WriteLine("[X, Y, Z]");
-                Console.WriteLine("Adr_PlayerX: " + Convert.ToString(ReadInt32(myBase + Adr_BL_X_Offset, Handle)));
-                Console.WriteLine("Adr_PlayerY: " + Convert.ToString(ReadInt32(myBase + Adr_BL_Y_Offset, Handle)));
-                Console.WriteLine("Adr_PlayerZ: " + Convert.ToString(ReadInt32(myBase + Adr_BL_Z_Offset, Handle)));
+                Console.WriteLine("Player X: " + Convert.ToString(ReadInt32(myBase + Adr_BL_X_Offset, Handle)));
+                Console.WriteLine("Player Y: " + Convert.ToString(ReadInt32(myBase + Adr_BL_Y_Offset, Handle)));
+                Console.WriteLine("Player Z: " + Convert.ToString(ReadInt32(myBase + Adr_BL_Z_Offset, Handle)));
                 Console.WriteLine("");
 
                 Console.WriteLine("[Others]");
-                Console.WriteLine("Adr_PlayerID: " + Convert.ToString(ReadInt32(Base + Adr_PlayerID, Handle)));
-                Console.WriteLine("Adr_FollowID: " + Convert.ToString(ReadInt32(Base + Adr_FollowID, Handle)));
-                Console.WriteLine("Adr_AttackID: " + Convert.ToString(ReadInt32(Base + Adr_AttackID, Handle)));
+                Console.WriteLine("Player ID: " + Convert.ToString(ReadInt32(Base + Adr_PlayerID, Handle)));
+                Console.WriteLine("Follow ID: " + Convert.ToString(ReadInt32(Base + Adr_FollowID, Handle)));
+                Console.WriteLine("Attack ID: " + Convert.ToString(ReadInt32(Base + Adr_AttackID, Handle)));
                 Console.WriteLine("");
 
                 if (ReadInt32(myBase + Adr_BL_Light_Percent_Offset, Handle) < 12)
