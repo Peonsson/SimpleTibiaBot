@@ -12,6 +12,7 @@ namespace SimpleTibiaBot
     class Program
     {
         private static IntPtr Handle;
+        private static string CHARACTER_NAME = "Friend";
 
         [Flags]
         public enum ProcessAccessType
@@ -137,7 +138,8 @@ namespace SimpleTibiaBot
             //UInt32 Adr_TeaKey = $719D78;//key to crypt/decrypt the packets of tibiaclient
             
             //Battle Window
-            UInt32 Adr_BL_Light_Percent_Offset = 0x70;
+            UInt32 Adr_BL_Light_Offset = 0x70;
+            UInt32 Adr_BL_Brightness_Offset = 0x74;
             UInt32 Adr_BL_Health_Percent_Offset = 0x80;
             UInt32 Adr_BL_X_Offset = 0x20;
             UInt32 Adr_BL_Y_Offset = 0x24;
@@ -148,7 +150,7 @@ namespace SimpleTibiaBot
             int counter = 0;
             while (true)
             {
-                if (ReadString(Base + Adr_BListBegin + (0x9C * counter), Handle).Equals("Peon"))
+                if (ReadString(Base + Adr_BListBegin + (0x9C * counter), Handle).Equals(CHARACTER_NAME))
                 {
                     myBase = Base + Adr_BListBegin + (0x9C * (uint)counter);
                     break;
@@ -192,11 +194,17 @@ namespace SimpleTibiaBot
                 Console.WriteLine("Player ID: " + Convert.ToString(ReadInt32(Base + Adr_PlayerID, Handle)));
                 Console.WriteLine("Follow ID: " + Convert.ToString(ReadInt32(Base + Adr_FollowID, Handle)));
                 Console.WriteLine("Attack ID: " + Convert.ToString(ReadInt32(Base + Adr_AttackID, Handle)));
+                Console.WriteLine("Player Light: " + Convert.ToString(ReadInt32(myBase + Adr_BL_Light_Offset, Handle)));
+                Console.WriteLine("Player Brightness: " + Convert.ToString(ReadInt32(myBase + Adr_BL_Brightness_Offset, Handle)));
                 Console.WriteLine("");
 
-                if (ReadInt32(myBase + Adr_BL_Light_Percent_Offset, Handle) < 12)
+                if (ReadInt32(myBase + Adr_BL_Light_Offset, Handle) < 12)
                 {
-                    WriteMemory((IntPtr)(myBase + Adr_BL_Light_Percent_Offset), BitConverter.GetBytes(12), out bytesOut);
+                    WriteMemory((IntPtr)(myBase + Adr_BL_Light_Offset), BitConverter.GetBytes(12), out bytesOut);
+                }
+                if (ReadInt32(myBase + Adr_BL_Brightness_Offset, Handle) < 215)
+                {
+                    WriteMemory((IntPtr)(myBase + Adr_BL_Brightness_Offset), BitConverter.GetBytes(215), out bytesOut);
                 }
 
                 counter = 0;
